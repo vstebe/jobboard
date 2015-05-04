@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  company_id: 1
+  title: MyString
+  target: MyString
+  description: MyString
+  duration: 1
+  creation_date: 2015-05-04
+  start_date: 2015-05-04
+  expiration_date: 2015-05-04
+  contact: MyString
+  category_id: 1
+  active: false
+
+two:
+  company_id: 1
+  title: MyString
+  target: MyString
+  description: MyString
+  duration: 1
+  creation_date: 2015-05-04
+  start_date: 2015-05-04
+  expiration_date: 2015-05-04
+  contact: MyString
+  category_id: 1
+  active: false

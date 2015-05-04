@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @offer.company_id %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @offer.title %>
+</p>
+
+<p>
+  <strong>Target:</strong>
+  <%= @offer.target %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @offer.description %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @offer.duration %>
+</p>
+
+<p>
+  <strong>Creation date:</strong>
+  <%= @offer.creation_date %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @offer.start_date %>
+</p>
+
+<p>
+  <strong>Expiration date:</strong>
+  <%= @offer.expiration_date %>
+</p>
+
+<p>
+  <strong>Contact:</strong>
+  <%= @offer.contact %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @offer.category_id %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @offer.active %>
+</p>
+
+<%= link_to 'Edit', edit_offer_path(@offer) %> |
+<%= link_to 'Back', offers_path %>
