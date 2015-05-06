@@ -6,6 +6,8 @@ class CreateUsers < ActiveRecord::Migration
       t.string :first_name
       t.string :mail
       t.integer :promo
+      t.integer :companie_id
+      t.integer :offer_id
 
       t.timestamps null: false
     end

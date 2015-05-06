@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20150506075625) do
   create_table "companies", force: :cascade do |t|
     t.string   "name"
     t.string   "mail"
-    t.integer  "num"
+    t.string   "phone"
     t.string   "address"
     t.string   "description"
     t.datetime "created_at",  null: false
@@ -56,6 +56,8 @@ ActiveRecord::Schema.define(version: 20150506075625) do
     t.string   "first_name"
     t.string   "mail"
     t.integer  "promo"
+    t.integer  "companie_id"
+    t.integer  "offer_id"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "email",                  default: "", null: false
