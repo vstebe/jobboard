@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20150506075625) do
 
   create_table "offers", force: :cascade do |t|
     t.integer  "company_id"
+    t.integer  "offer_id"
     t.string   "title"
     t.string   "target"
     t.string   "description"
@@ -56,8 +57,7 @@ ActiveRecord::Schema.define(version: 20150506075625) do
     t.string   "first_name"
     t.string   "mail"
     t.integer  "promo"
-    t.integer  "companie_id"
-    t.integer  "offer_id"
+    t.integer  "company_id"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "email",                  default: "", null: false

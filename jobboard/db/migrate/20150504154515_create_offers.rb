@@ -2,6 +2,7 @@ class CreateOffers < ActiveRecord::Migration
   def change
     create_table :offers do |t|
       t.integer :company_id
+      t.integer :offer_id
       t.string :title
       t.string :target
       t.string :description
