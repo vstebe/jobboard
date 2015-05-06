@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :applications
+  resources :applications
+  resources :applications
   resources :offers
   resources :offers
   resources :companies
