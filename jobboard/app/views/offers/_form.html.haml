@@ -1,0 +1,55 @@
+= form_for(@offer) do |f|
+  - if @offer.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@offer.errors.count, "error")
+        prohibited this offer from being saved:
+      %ul
+        - @offer.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = f.label :company_id
+    %br/
+    = f.number_field :company_id
+  .field
+    = f.label :title
+    %br/
+    = f.text_field :title
+  .field
+    = f.label :target
+    %br/
+    = f.text_field :target
+  .field
+    = f.label :description
+    %br/
+    = f.text_field :description
+  .field
+    = f.label :duration
+    %br/
+    = f.number_field :duration
+  .field
+    = f.label :creation_date
+    %br/
+    = f.date_select :creation_date
+  .field
+    = f.label :start_date
+    %br/
+    = f.date_select :start_date
+  .field
+    = f.label :expiration_date
+    %br/
+    = f.date_select :expiration_date
+  .field
+    = f.label :contact
+    %br/
+    = f.text_field :contact
+  .field
+    = f.label :category_id
+    %br/
+    = f.number_field :category_id
+  .field
+    = f.label :active
+    %br/
+    = f.check_box :active
+  .actions
+    = f.submit

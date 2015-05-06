@@ -1,0 +1,31 @@
+= form_for(@company) do |f|
+  - if @company.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@company.errors.count, "error")
+        prohibited this company from being saved:
+      %ul
+        - @company.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = f.label :name
+    %br/
+    = f.text_field :name
+  .field
+    = f.label :mail
+    %br/
+    = f.text_field :mail
+  .field
+    = f.label :num
+    %br/
+    = f.number_field :num
+  .field
+    = f.label :address
+    %br/
+    = f.text_field :address
+  .field
+    = f.label :description
+    %br/
+    = f.text_field :description
+  .actions
+    = f.submit

@@ -1,0 +1,20 @@
+%p#notice= notice
+%h1 Listing Applications
+%table
+  %thead
+    %tr
+      %th User
+      %th Offer
+      %th Time
+      %th{:colspan => "3"}
+  %tbody
+    - @applications.each do |application|
+      %tr
+        %td= application.user_id
+        %td= application.offer_id
+        %td= application.time
+        %td= link_to 'Show', application
+        %td= link_to 'Edit', edit_application_path(application)
+        %td= link_to 'Destroy', application, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Application', new_application_path

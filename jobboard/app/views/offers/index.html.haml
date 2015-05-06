@@ -1,0 +1,37 @@
+%p#notice= notice
+%h1 Listing Offers
+%p= current_user
+%table
+  %thead
+    %tr
+      %th Company
+      %th Title
+      %th Target
+      %th Description
+      %th Duration
+      %th Creation date
+      %th Start date
+      %th Expiration date
+      %th Contact
+      %th Category
+      %th Active
+      %th{:colspan => "3"}
+  %tbody
+    - @offers.each do |offer|
+      %tr
+        %td= offer.company_id
+        %td= offer.title
+        %td= offer.target
+        %td= offer.description
+        %td= offer.duration
+        %td= offer.creation_date
+        %td= offer.start_date
+        %td= offer.expiration_date
+        %td= offer.contact
+        %td= offer.category_id
+        %td= offer.active
+        %td= link_to 'Show', offer
+        %td= link_to 'Edit', edit_offer_path(offer)
+        %td= link_to 'Destroy', offer, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Offer', new_offer_path

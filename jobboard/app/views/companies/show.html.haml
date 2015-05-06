@@ -1,0 +1,19 @@
+%p#notice= notice
+%p
+  %strong Name:
+  = @company.name
+%p
+  %strong Mail:
+  = @company.mail
+%p
+  %strong Num:
+  = @company.num
+%p
+  %strong Address:
+  = @company.address
+%p
+  %strong Description:
+  = @company.description
+= link_to 'Edit', edit_company_path(@company)
+|
+= link_to 'Back', companies_path
