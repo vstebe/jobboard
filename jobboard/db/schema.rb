@@ -36,7 +36,6 @@ ActiveRecord::Schema.define(version: 20150506075625) do
 
   create_table "offers", force: :cascade do |t|
     t.integer  "company_id"
-    t.integer  "offer_id"
     t.string   "title"
     t.string   "target"
     t.string   "description"
