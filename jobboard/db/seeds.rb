@@ -6,6 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Company.create(name: 'Euro Information', mail: 'test@e-i.fr', phone: '01 23 45 67 89', address: "Strasbourg", description: "Filiale Crédit Mutuel !")
-User.create(user_type: 'admin', surname: 'De la Grandière', first_name: 'Richard', mail: 'richard.delagrandiere@e-i.fr', promo: "", company_id: 1)
+company = Company.create(name: 'Euro Information', mail: 'test@e-i.fr', phone: '01 23 45 67 89', address: 'Strasbourg', description: 'Filiale Crédit Mutuel !')
+User.create(user_type: 'admin', surname: 'De la Grandière', first_name: 'Richard',
+ mail: 'richard.delagrandiere@e-i.fr', promo: 0, company: company, created_at: DateTime.new(2009,9,14,8),
+ updated_at: DateTime.new(2009,9,14,8), email: 'plop', encrypted_password: 'plopplop', sign_in_count: 0)
 #Application:create(user_id)
