@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
-         belongs_to :companies
+         belongs_to :company
          has_many :offers
-         has_many :applications
+         has_many :offers, through: :applications
 end
