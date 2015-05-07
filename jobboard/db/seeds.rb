@@ -20,7 +20,7 @@ User.create(user_type: 'étudiant', surname: 'De la Grandière', first_name: 'Ma
  updated_at: DateTime.new(2009,9,14,8), email: 'plop@ccc.com', password: 'plop!plop',
  password_confirmation: 'plop!plop', sign_in_count: 0)
 
-Offer.create(company_id: 1, title: 'Offre Crédit galactique - voyage galactée',
+Offer.create(company_id: 1, user_id: 2, title: 'Offre Crédit galactique - voyage galactée',
 target: '1ère année', description:'Gérez les placements de nos clients sur des planètes étrangères à notre système. Curieux et motivé, vous serez amenez à gérez un grand nombre de clients à travers la galaxie.
 Permis X-wing requis, Mention hyper-espace appréciée',
 duration: '12', creation_date: DateTime.new(2009,9,14,8), start_date: DateTime.new(2009,9,14,8),

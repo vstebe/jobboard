@@ -1,5 +1,5 @@
 class Offer < ActiveRecord::Base
-  belongs_to :users
-  belongs_to :companies
+  belongs_to :user
+  belongs_to :company
   has_many :applications
 end

@@ -15,6 +15,10 @@
       %th Contact
       %th Category
       %th Active
+      %td User
+      %th Company
+      %th Application
+
       %th{:colspan => "3"}
   %tbody
     - @offers.each do |offer|
@@ -27,9 +31,13 @@
         %td= offer.creation_date
         %td= offer.start_date
         %td= offer.expiration_date
+        %td= offer.user.first_name
+        %td= offer.company.name
+        %td= offer.applications[0].user.first_name
         %td= offer.contact
         %td= offer.category_id
         %td= offer.active
+
         %td= link_to 'Show', offer
         %td= link_to 'Edit', edit_offer_path(offer)
         %td= link_to 'Destroy', offer, method: :delete, data: { confirm: 'Are you sure?' }

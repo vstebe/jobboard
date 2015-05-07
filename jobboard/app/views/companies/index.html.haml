@@ -8,15 +8,19 @@
       %th Num
       %th Address
       %th Description
+      %th Administrator
+      %th Offer Title
       %th{:colspan => "3"}
   %tbody
     - @companies.each do |company|
       %tr
         %td= company.name
         %td= company.mail
-        %td= company.num
+        %td= company.phone
         %td= company.address
         %td= company.description
+        %td= company.user.first_name
+        %td= company.offers[0].title
         %td= link_to 'Show', company
         %td= link_to 'Edit', edit_company_path(company)
         %td= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' }

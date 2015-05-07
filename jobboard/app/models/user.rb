@@ -6,5 +6,5 @@ class User < ActiveRecord::Base
 
          belongs_to :company
          has_many :offers
-         has_many :offers, through: :applications
+         has_many :applications
 end
