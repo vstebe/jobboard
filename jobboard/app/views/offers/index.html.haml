@@ -1,5 +1,17 @@
 %p#notice= notice
 %h1 Les offres actuelles
+
+.panel.panel-default
+  .panel-heading Filtrer
+  .panel-body
+    .row
+      %form{:action => '/offers/filter'}
+        .col-md-4
+          = select_tag "filter_company_id", options_from_collection_for_select(Company.all, "id", "name", "1"), :class => "form-control"
+        .col-md-4
+        .col-md-4
+          %input.btn.btn-default{:type => 'submit'}
+
 .list-group
 - @offers.each do |offer|
   %a.list-group-item{:href => "/offers/#{offer.id}"}

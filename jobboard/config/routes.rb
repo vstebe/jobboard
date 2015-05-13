@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  get '/offers/filter', to: 'offers#filter'
   resources :applications
   resources :offers
   resources :companies

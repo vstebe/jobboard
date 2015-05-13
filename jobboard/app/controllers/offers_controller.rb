@@ -6,6 +6,13 @@ class OffersController < ApplicationController
   def index
     @offers = Offer.all
   end
+  
+  def filter
+    @offers = Offer.where(company_id: params[:filter_company_id])
+    respond_to do |format|
+      format.html { render :index }
+    end
+  end
 
   # GET /offers/1
   # GET /offers/1.json
@@ -38,6 +45,8 @@ class OffersController < ApplicationController
       end
     end
   end
+  
+
 
   # PATCH/PUT /offers/1
   # PATCH/PUT /offers/1.json
