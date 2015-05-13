@@ -1,7 +1,9 @@
 %p#notice= notice
 %h1 Les offres actuelles
+.list-group
 - @offers.each do |offer|
-  =offer.company_id
-  .panel.panel-default
-    .panel-body
-      Basic panel example
+  %a.list-group-item{:href => "/offers/#{offer.id}"}
+    %h4.list-group-item-heading= offer.title
+    %p.list-group-item-text= " de " + offer.company.name + " - à partir du " + offer.start_date.strftime("%d/%m/%Y") 
+%a.right-button-container{:href => "/offers/new"}
+  %button.btn.btn-primary.btn-lg Proposer une offre

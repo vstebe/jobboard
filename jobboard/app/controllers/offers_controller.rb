@@ -15,10 +15,12 @@ class OffersController < ApplicationController
   # GET /offers/new
   def new
     @offer = Offer.new
+    @companies = Company.all
   end
 
   # GET /offers/1/edit
   def edit
+    @companies = Company.all
   end
 
   # POST /offers

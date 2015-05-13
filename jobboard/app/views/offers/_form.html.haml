@@ -1,4 +1,4 @@
-= form_for(@offer) do |f|
+= form_for @offer, :html => {:class => "form-horizontal"} do |f|
   - if @offer.errors.any?
     #error_explanation
       %h2
@@ -7,49 +7,40 @@
       %ul
         - @offer.errors.full_messages.each do |message|
           %li= message
-  .field
-    = f.label :company_id
-    %br/
-    = f.number_field :company_id
-  .field
-    = f.label :title
-    %br/
-    = f.text_field :title
-  .field
-    = f.label :target
-    %br/
-    = f.text_field :target
-  .field
-    = f.label :description
-    %br/
-    = f.text_field :description
-  .field
-    = f.label :duration
-    %br/
-    = f.number_field :duration
-  .field
-    = f.label :creation_date
-    %br/
-    = f.date_select :creation_date
-  .field
-    = f.label :start_date
-    %br/
-    = f.date_select :start_date
-  .field
-    = f.label :expiration_date
-    %br/
-    = f.date_select :expiration_date
-  .field
-    = f.label :contact
-    %br/
-    = f.text_field :contact
-  .field
-    = f.label :category_id
-    %br/
-    = f.number_field :category_id
-  .field
-    = f.label :active
-    %br/
-    = f.check_box :active
-  .actions
-    = f.submit
+  .form-group
+    %label.col-sm-2.control-label{:for => "company"} Entreprise
+    .col-sm-10
+      = f.collection_select :company_id, Company.all, :id, :name, {}, {:class => "form-control"}
+  .form-group
+    %label.col-sm-2.control-label{:for => "offer_title"} Intitulé
+    .col-sm-10
+      = f.text_field :title, :class => "form-control"
+  .form-group
+    %label.col-sm-2.control-label{:for => "target"} Etudiants ciblés
+    .col-sm-10
+      %select.form-control{:id => "target"}
+        %option 1ère année
+        %option 2ème année
+        %option 3ème année
+        %option Alternance
+  .form-group
+    %label.col-sm-2.control-label{:for => "offer_description"} Description
+    .col-sm-10
+      = f.text_area :description, :class => "form-control"
+  .form-group
+    %label.col-sm-2.control-label{:for => "offer_duration"} Durée en semaines
+    .col-sm-10
+      = f.number_field :duration, :class => "form-control"
+  .form-group
+    %label.col-sm-2.control-label{:for => "offer_start_date"} Du
+    .col-sm-10
+      = f.date_field :start_date, :class => "form-control"
+  .form-group
+    %label.col-sm-2.control-label{:for => "offer_expiration_date"} Au
+    .col-sm-10
+      = f.date_field :expiration_date, :class => "form-control"
+  .form-group
+    %label.col-sm-2.control-label{:for => "offer_contact"} Adresse e-mail de contact
+    .col-sm-10
+      = f.email_field :contact, :class => "form-control"
+    = f.submit :class => "btn btn-default"

@@ -1,37 +1,12 @@
 %p#notice= notice
-%p
-  %strong Company:
-  = @offer.company_id
-%p
-  %strong Title:
-  = @offer.title
-%p
-  %strong Target:
-  = @offer.target
-%p
-  %strong Description:
-  = @offer.description
-%p
-  %strong Duration:
-  = @offer.duration
-%p
-  %strong Creation date:
-  = @offer.creation_date
-%p
-  %strong Start date:
-  = @offer.start_date
-%p
-  %strong Expiration date:
-  = @offer.expiration_date
-%p
-  %strong Contact:
-  = @offer.contact
-%p
-  %strong Category:
-  = @offer.category_id
-%p
-  %strong Active:
-  = @offer.active
-= link_to 'Edit', edit_offer_path(@offer)
-|
-= link_to 'Back', offers_path
+.panel.panel-default
+  .panel-body
+    %h2= @offer.title
+    %h3= "De "+@offer.company.name+" - "+@offer.created_at.strftime("%d/%m/%Y")
+    %p= @offer.description
+    %strong= "A partir du "+@offer.start_date.strftime("%d/%m/%Y")+" pour une durée de #{@offer.duration} semaines"
+    %a.right-button-container{:href => "mailto:#{@offer.contact}?subject=#{@offer.title}"}
+      %button.btn.btn-primary.btn-lg Postuler
+%a{:href => "/"}
+  %button.btn.btn-default Retour
+  
