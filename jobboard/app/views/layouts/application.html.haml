@@ -25,13 +25,16 @@
           %span.icon-bar
           %span.icon-bar
           %span.icon-bar
-        %a.navbar-brand(href="#") Jobboard
+        %a.navbar-brand(href="/") Jobboard
         .navbar-collapse.collapse.navbar-responsive-collapse
           %ul.nav.navbar-nav
-            %li= link_to "Link 1", "/path1"
-            %li= link_to "Link 2", "/path2"
-            %li= link_to "Link 3", "/path3"
-            %li= link_to "Link 3", "/path3"
+            - if user_signed_in?
+              %li
+                %a="Bienvenue "+current_user.first_name+" "+current_user.surname
+                
+              %li= link_to "Se déconnecter", destroy_user_session_path, :method => :delete
+            - else
+              %li= link_to "Connexion", "/users/sign_in"
 
     .container
       .row
@@ -39,12 +42,6 @@
           = bootstrap_flash
           = yield
         .col-lg-3
-          .well.sidebar-nav
-            %h3 Sidebar
-            %ul.nav.nav-list
-              %li.nav-header Sidebar
-              %li= link_to "Link 1", "/path1"
-              %li= link_to "Link 2", "/path2"
-              %li= link_to "Link 3", "/path3"
+
       %footer
         %p &copy; Company 2015

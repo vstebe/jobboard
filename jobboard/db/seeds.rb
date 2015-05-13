@@ -9,11 +9,13 @@
 Company.create(name: 'Euro Information', mail: 'test@e-i.fr', phone: '01 23 45 67 89',
 address: 'Strasbourg', description: 'Filiale Crédit Mutuel !')
 
-User.create!(user_type: 'admin', surname: 'De la Grandière', first_name: 'Richard',
+userr = User.create!(user_type: 'admin', surname: 'De la Grandière', first_name: 'Richard',
  mail: 'richard.delagrandiere@e-i.fr', promo: 0, company_id: 1, created_at: DateTime.new(2009,9,14,8),
- updated_at: DateTime.new(2009,9,14,8), email: 'plop@bbb.com', password: 'plopplop',password_confirmation: 'plopplop', sign_in_count: 0)
+ updated_at: DateTime.new(2009,9,14,8), email: 'richard.delagrandiere@e-i.fr', password: 'plopplop',password_confirmation: 'plopplop', sign_in_count: 0)
 #Application:create(user_id)
 
+userr.skip_confirmation!
+userr.save!
 
 User.create(user_type: 'étudiant', surname: 'De la Grandière', first_name: 'Marie-Perrine',
  mail: 'marie-perrine.delagrandiere@e-i.fr', promo: 1989, company_id: 1, created_at: DateTime.new(20010,9,14,8),
