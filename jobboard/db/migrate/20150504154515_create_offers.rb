@@ -4,7 +4,7 @@ class CreateOffers < ActiveRecord::Migration
       t.integer :company_id
       t.integer :user_id
       t.string :title
-      t.string :target
+      t.integer :target_id
       t.string :description
       t.integer :duration
       t.date :creation_date
@@ -12,6 +12,7 @@ class CreateOffers < ActiveRecord::Migration
       t.date :expiration_date
       t.string :contact
       t.integer :category_id
+      t.boolean :published
       t.boolean :active
 
       t.timestamps null: false

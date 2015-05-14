@@ -7,8 +7,9 @@
     .row
       %form{:action => '/offers/filter'}
         .col-md-4
-          = select_tag "filter_company_id", options_from_collection_for_select(Company.all, "id", "name", "1"), :class => "form-control"
+          = select_tag "filter_company_id", options_from_collection_for_select(Company.all, "id", "name", @filter_company_id), :include_blank => 'Toutes les entreprises', :class => "form-control"
         .col-md-4
+          = select_tag "filter_target_id", options_from_collection_for_select(Target.all, "id", "label", @filter_target_id), :include_blank => 'Tout type', :class => "form-control"
         .col-md-4
           %input.btn.btn-default{:type => 'submit'}
 

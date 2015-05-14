@@ -8,7 +8,16 @@ class OffersController < ApplicationController
   end
   
   def filter
-    @offers = Offer.where(company_id: params[:filter_company_id])
+    @filter_company_id = params[:filter_company_id]
+    @filter_target_id = params[:filter_target_id]
+    conditions = {}
+    if @filter_company_id.present?
+        conditions[:company_id] = @filter_company_id
+    end
+    if @filter_target_id.present?
+        conditions[:target_id] = @filter_target_id
+    end
+    @offers = Offer.where(conditions)
     respond_to do |format|
       format.html { render :index }
     end
@@ -33,6 +42,7 @@ class OffersController < ApplicationController
   # POST /offers
   # POST /offers.json
   def create
+    offer_params[:user_id] = current_user.id
     @offer = Offer.new(offer_params)
 
     respond_to do |format|
@@ -80,6 +90,6 @@ class OffersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def offer_params
-      params.require(:offer).permit(:company_id, :title, :target, :description, :duration, :creation_date, :start_date, :expiration_date, :contact, :category_id, :active)
+      params.require(:offer).permit(:company_id, :title, :target_id, :description, :duration, :creation_date, :start_date, :expiration_date, :contact, :category_id, :active, :published)
     end
 end

@@ -16,13 +16,9 @@
     .col-sm-10
       = f.text_field :title, :class => "form-control"
   .form-group
-    %label.col-sm-2.control-label{:for => "target"} Etudiants ciblés
+    %label.col-sm-2.control-label{:for => "offer_target"} Etudiants ciblés
     .col-sm-10
-      %select.form-control{:id => "target"}
-        %option 1ère année
-        %option 2ème année
-        %option 3ème année
-        %option Alternance
+      = f.collection_select :target_id, Target.all, :id, :label, {}, {:class => "form-control"}
   .form-group
     %label.col-sm-2.control-label{:for => "offer_description"} Description
     .col-sm-10
@@ -43,4 +39,8 @@
     %label.col-sm-2.control-label{:for => "offer_contact"} Adresse e-mail de contact
     .col-sm-10
       = f.email_field :contact, :class => "form-control"
+  .form-group
+    %label.col-sm-2.control-label{:for => "offer_published"} Publiée
+    .col-sm-10
+      = f.check_box :published, :class => "form-control"
     = f.submit :class => "btn btn-default"

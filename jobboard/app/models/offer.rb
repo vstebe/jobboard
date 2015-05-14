@@ -2,10 +2,9 @@ class Offer < ActiveRecord::Base
   belongs_to :user
   belongs_to :company
   has_many :applications
+  has_one :target
   
-  before_save :set_user
-  
-  def set_user()
-    self.user_id = self.id
-  end
+  validates :start_date, presence: true
+  validates :duration, presence: true
+  validates :title, presence: true
 end
