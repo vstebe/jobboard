@@ -5,8 +5,9 @@
     %h3= "De "+@offer.company.name+" - "+@offer.created_at.strftime("%d/%m/%Y")
     %p= @offer.description
     %strong= "A partir du "+@offer.start_date.strftime("%d/%m/%Y")+" pour une durée de #{@offer.duration} semaines"
-    %a.right-button-container{:href => "mailto:#{@offer.contact}?subject=#{@offer.title}"}
-      %button.btn.btn-primary.btn-lg Postuler
+    .right-button-container
+      %a{:href => "mailto:#{@offer.contact}?subject=#{@offer.title}"}
+        %button.btn.btn-primary.btn-lg Postuler
 %a{:href => "/"}
   %button.btn.btn-default Retour
   

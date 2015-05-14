@@ -30,6 +30,8 @@ class OffersController < ApplicationController
 
   # GET /offers/new
   def new
+    authorize! :create, Offer
+      
     @offer = Offer.new
     @companies = Company.all
   end
@@ -42,6 +44,8 @@ class OffersController < ApplicationController
   # POST /offers
   # POST /offers.json
   def create
+    authorize! :create, Offer
+      
     offer_params[:user_id] = current_user.id
     @offer = Offer.new(offer_params)
 

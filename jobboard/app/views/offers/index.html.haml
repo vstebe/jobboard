@@ -18,5 +18,10 @@
   %a.list-group-item{:href => "/offers/#{offer.id}"}
     %h4.list-group-item-heading= offer.title
     %p.list-group-item-text= " de " + offer.company.name + " - à partir du " + offer.start_date.strftime("%d/%m/%Y") 
-%a.right-button-container{:href => "/offers/new"}
-  %button.btn.btn-primary.btn-lg Proposer une offre
+- if @offers.count == 0
+  %p Aucune offre ne correspond à votre recherche
+  
+- if can? :create, Offer
+  .right-button-container
+    %a{:href => "/offers/new"}
+      %button.btn.btn-primary.btn-lg Proposer une offre
