@@ -19,12 +19,16 @@ address: 'Avenue de Colmar, Strasbourg', description: 'Wesh Ibm !')
 
 userr = User.create!(surname: 'De la Grandière', first_name: 'Richard',
  promo: 0, company_id: 1, created_at: DateTime.new(2009,9,14,8),role: 'admin',
+
+
+
  updated_at: DateTime.new(2009,9,14,8), email: 'richard.delagrandiere@e-i.fr', password: 'plopplop',password_confirmation: 'plopplop', sign_in_count: 0)
 #Application:create(user_id)
 
 userr.skip_confirmation!
 userr.save!
 
+<<<<<<< HEAD
 userr = User.create!(surname: 'Stébé', first_name: 'Vincent',
 promo: 2017, created_at: DateTime.now,role: 'not_validated',
  updated_at: DateTime.now, email: 'vincent.stebe@gmail.com', password: 'plopplop',password_confirmation: 'plopplop', sign_in_count: 0)
@@ -36,6 +40,10 @@ userr.save!
 User.create(surname: 'De la Grandière', first_name: 'Marie-Perrine',
   promo: 1989, company_id: 1, created_at: DateTime.new(20010,9,14,8),
  updated_at: DateTime.new(2009,9,14,8), email: 'plop@ccc.com', password: 'plop!plop',
+=======
+User.create(user_type: 'étudiant', surname: 'De la Grandière', first_name: 'Marie-Perrine',promo: 1989, company_id: 1, created_at: DateTime.new(20010,9,14,8),
+ updated_at: DateTime.new(2009,9,14,8), email: 'marie-perrine.delagrandiere@e-i.fr', password: 'plop!plop',
+>>>>>>> d9bc3b11d152800cfffba5aed7b8f6b6d5f34327
  password_confirmation: 'plop!plop', sign_in_count: 0)
 
 

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :targets
   post '/users/admin_edit', to: 'users#admin_edit'
-  devise_for :users
+  devise_for :users, :controllers => { registrations: 'registrations' }
   get '/offers/filter', to: 'offers#filter'
   resources :applications
   resources :offers
