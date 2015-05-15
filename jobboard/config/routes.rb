@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :targets
+  post '/users/admin_edit', to: 'users#admin_edit'
   devise_for :users
   get '/offers/filter', to: 'offers#filter'
   resources :applications

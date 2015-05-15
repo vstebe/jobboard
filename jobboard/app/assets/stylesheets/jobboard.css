@@ -23,3 +23,11 @@ iframe {
   width:100%;
   min-height:300px;
 }
+
+td {
+  vertical-align: middle;
+}
+
+tr.not-validated {
+  background-color: #8F75A6;
+}

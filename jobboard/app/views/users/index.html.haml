@@ -1,27 +1,29 @@
 %p#notice= notice
-%h1 Listing Users
-%table
-  %thead
-    %tr
-      %th Type
-      %th Surname
-      %th First name
-      %th Mail
-      %th Promo
-      %th Company
-      %th{:colspan => "3"}
-  %tbody
-    - @users.each do |user|
+%h1 Utilisateurs
+= debug @d
+= form_tag '/users/admin_edit' do
+  %table.table.table-striped
+    %thead
       %tr
-        %td= user.user_type
-        %td= user.surname
-        %td= user.first_name
-        %td= user.mail
-        %td= user.promo
-        %td= user.company.name
+        %th Nom
+        %th Prénom
+        %th Mail
+        %th Promo
+        %th Entreprise
+        %th Etat
+        %th Supprimer
+    %tbody
+      - @users.each do |user|
+        %tr{:class => ("not-validated" unless user.role!="not_validated")}
+          %td= user.surname
+          %td= user.first_name
+          %td= user.email
+          %td= user.promo
+          %td= user.company.nil? ? "-" : user.company.name
+          %td= select_tag "role[#{user.id}]", options_for_select({ "Elève" => "student", "Représentant" => "representative", "Admin" => "admin", "Non Validé" => "not_validated" }, user.role), {:class => 'form-control'}
+          %td= check_box_tag "delete[#{user.id}]"
+        = hidden_field_tag 'user_ids[]', user.id
+  = submit_tag
 
-        %td= link_to 'Show', user
-        %td= link_to 'Edit', edit_user_path(user)
-        %td= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }
+
 %br/
-= link_to 'New User', new_user_path
