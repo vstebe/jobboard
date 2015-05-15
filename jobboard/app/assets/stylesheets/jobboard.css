@@ -18,3 +18,8 @@ textarea {
 btn {
   margin-top:10px;
 }
+
+iframe {
+  width:100%;
+  min-height:300px;
+}

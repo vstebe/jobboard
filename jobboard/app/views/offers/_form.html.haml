@@ -10,7 +10,10 @@
   .form-group
     %label.col-sm-2.control-label{:for => "company"} Entreprise
     .col-sm-10
-      = f.collection_select :company_id, Company.all, :id, :name, {}, {:class => "form-control"}
+      .input-group
+        = f.collection_select :company_id, Company.all, :id, :name, {}, {:class => "form-control"}
+        %span.input-group-btn
+          %a.btn.btn-default{:href => '/companies/new'} +
   .form-group
     %label.col-sm-2.control-label{:for => "offer_title"} Intitulé
     .col-sm-10

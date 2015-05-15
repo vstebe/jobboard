@@ -1,31 +1,30 @@
-= form_for(@company) do |f|
+= form_for @company, :html => {:class => "form-horizontal"} do |f|
   - if @company.errors.any?
     #error_explanation
       %h2
         = pluralize(@company.errors.count, "error")
-        prohibited this company from being saved:
+        prohibited this offer from being saved:
       %ul
         - @company.errors.full_messages.each do |message|
           %li= message
-  .field
-    = f.label :name
-    %br/
-    = f.text_field :name
-  .field
-    = f.label :mail
-    %br/
-    = f.text_field :mail
-  .field
-    = f.label :num
-    %br/
-    = f.number_field :num
-  .field
-    = f.label :address
-    %br/
-    = f.text_field :address
-  .field
-    = f.label :description
-    %br/
-    = f.text_field :description
-  .actions
-    = f.submit
+  .form-group
+    %label.col-sm-2.control-label{:for => "company_name"} Nom de l'entreprise
+    .col-sm-10
+      = f.text_field :name, :class => "form-control"
+  .form-group
+    %label.col-sm-2.control-label{:for => "company_description"} Description
+    .col-sm-10
+      = f.text_area :description, :class => "form-control"
+  .form-group
+    %label.col-sm-2.control-label{:for => "company_phone"} Téléphone
+    .col-sm-10
+      = f.text_field :phone, :class => "form-control"
+  .form-group
+    %label.col-sm-2.control-label{:for => "company_mail"} Adresse email
+    .col-sm-10
+      = f.text_field :mail, :class => "form-control"
+  .form-group
+    %label.col-sm-2.control-label{:for => "company_address"} Adresse
+    .col-sm-10
+      = f.text_area :address, :class => "form-control"
+  = f.submit "Envoyer", :class => "btn btn-default" 
