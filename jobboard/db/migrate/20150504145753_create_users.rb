@@ -4,7 +4,6 @@ class CreateUsers < ActiveRecord::Migration
       t.string :user_type
       t.string :surname
       t.string :first_name
-      t.string :mail
       t.integer :promo
       t.integer :company_id
 

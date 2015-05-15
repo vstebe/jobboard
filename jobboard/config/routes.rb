@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :targets
-  devise_for :users
+  devise_for :users, :controllers => { registrations: 'registrations' }
   get '/offers/filter', to: 'offers#filter'
   resources :applications
   resources :offers

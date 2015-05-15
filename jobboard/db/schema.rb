@@ -62,7 +62,6 @@ ActiveRecord::Schema.define(version: 20150514120619) do
     t.string   "user_type"
     t.string   "surname"
     t.string   "first_name"
-    t.string   "mail"
     t.integer  "promo"
     t.integer  "company_id"
     t.datetime "created_at",                          null: false
