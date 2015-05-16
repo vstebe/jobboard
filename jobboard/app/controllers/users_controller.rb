@@ -35,7 +35,7 @@ class UsersController < ApplicationController
     @users = Array.new
 
     @_users.each do |user|
-      if delete[user.id.to_s] == '1'
+      if !delete.nil? && delete[user.id.to_s] == '1'
         user.destroy
       else
         if user.role != role[user.id.to_s]
