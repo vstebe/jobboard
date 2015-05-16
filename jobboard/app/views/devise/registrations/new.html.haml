@@ -8,11 +8,11 @@
   .form-group
     %label.col-sm-2.control-label{:for => "password"} Mot de passe
     .col-sm-10
-      = f.text_field :password, :class => "form-control"
+      = f.password_field :password, :class => "form-control"
   .form-group
     %label.col-sm-2.control-label{:for => "password_confirmation"} Confirmation du mot de passe
     .col-sm-10
-      = f.text_field :password_confirmation, :class => "form-control"
+      = f.password_field :password_confirmation, :class => "form-control"
   .form-group
     %label.col-sm-2.control-label{:for => "surname"} Nom
     .col-sm-10
@@ -28,11 +28,10 @@
   .form-group
     %label.col-sm-2.control-label{:for => "company"} Entreprise
     .col-sm-10
-      = f.text_field :company, :class => "form-control"
+      .input-group
+        = f.collection_select :company_id, Company.all, :id, :name, {}, {:class => "form-control"}
+        %span.input-group-btn
+          %a.btn.btn-default{:href => '/companies/new'} +
+  = f.submit "Envoyer", :class => "btn btn-default"
 
-
-
-
-
-  %div= f.submit t('.sign_up', :default => "Sign up")
 = render "devise/shared/links"
