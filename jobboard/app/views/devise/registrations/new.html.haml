@@ -14,13 +14,23 @@
     %br/
     = f.password_field :password_confirmation
   %div
+    =f.label "Nom"
+    %br/
+    = f.text_field :surname
+  %div
     = f.label "Prénom"
     %br/
     = f.text_field :first_name
   %div
-    =f.label "Nom"
+    =f.label "Promotion"
     %br/
-    = f.text_field :last_name
+    = f.text_field :promo
+  %div
+    =f.label "Entreprise"
+    %br/
+    = f.text_field :company_id
+
+
 
 
 
