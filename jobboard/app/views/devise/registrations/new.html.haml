@@ -1,34 +1,34 @@
 %h2= t('.sign_up', :default => "Sign up")
 = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
   = devise_error_messages!
-  %div
-    = f.label :email
-    %br/
-    = f.email_field :email
-  %div
-    = f.label :password
-    %br/
-    = f.password_field :password
-  %div
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation
-  %div
-    =f.label "Nom"
-    %br/
-    = f.text_field :surname
-  %div
-    = f.label "Prénom"
-    %br/
-    = f.text_field :first_name
-  %div
-    =f.label "Promotion"
-    %br/
-    = f.text_field :promo
-  %div
-    =f.label "Entreprise"
-    %br/
-    = f.text_field :company_id
+  .form-group
+    %label.col-sm-2.control-label{:for => "email"} Email
+    .col-sm-10
+      = f.text_field :email, :class => "form-control"
+  .form-group
+    %label.col-sm-2.control-label{:for => "password"} Mot de passe
+    .col-sm-10
+      = f.text_field :password, :class => "form-control"
+  .form-group
+    %label.col-sm-2.control-label{:for => "password_confirmation"} Confirmation du mot de passe
+    .col-sm-10
+      = f.text_field :password_confirmation, :class => "form-control"
+  .form-group
+    %label.col-sm-2.control-label{:for => "surname"} Nom
+    .col-sm-10
+      = f.text_field :surname, :class => "form-control"
+  .form-group
+    %label.col-sm-2.control-label{:for => "first_name"} Prénom
+    .col-sm-10
+      = f.text_field :first_name, :class => "form-control"
+  .form-group
+    %label.col-sm-2.control-label{:for => "promo"} Promotion
+    .col-sm-10
+      = f.text_field :promo, :class => "form-control"
+  .form-group
+    %label.col-sm-2.control-label{:for => "company"} Entreprise
+    .col-sm-10
+      = f.text_field :company, :class => "form-control"
 
 
 
