@@ -1,8 +1,10 @@
 class OfferListMailer < ApplicationMailer
   default from: 'heeee@jobboard.com'
 
-  def offer_list(student)
-    mail(to: @student.email,
-         subject: 'Welcome to My Awesome Site')
+  def offer_list(student, offers)
+    @student = student
+    @offers = offers
+    mail(to: student.email,
+         subject: "Les stages n'attendent que vous !")
   end
 end

@@ -5,10 +5,11 @@
 
 # Example:
 #
-# set :output, "/path/to/my/cron_log.log"
+ set :output, "/home/vincent/cron_log.log"
+ set :environment, "development"
 #
-every 2.hours do
-   runner "OfferListMailer.offer_list.deliver_now"
+every 1.day, :at => '4:16 pm' do
+   runner "User.send_offer_list"
 end
 #
 # every 4.days do
