@@ -1,1 +1,12 @@
-%p Hey
+%h1 ENSIIE JobBoard
+%p
+  ="Bonjour #{@student.first_name} #{@student.surname} !"
+  N'oubliez pas les offres tendances du moment !
+
+.list-group
+- @offers.each do |offer|
+  = link_to offer_url(offer), class: "list-group-item" do
+    %h4.list-group-item-heading= offer.title
+    %p.list-group-item-text= " de " + offer.company.name + " - à partir du " + offer.start_date.strftime("%d/%m/%Y")
+- if @offers.count == 0
+  %p Aucune offre ne correspond à votre recherche

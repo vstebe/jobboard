@@ -15,8 +15,9 @@ class User < ActiveRecord::Base
 
          def self.send_offer_list
             students = User.where(role: 'student')
+            offers = Offer.all
             students.each do |s|
-              OfferListMailer.offer_list(s).deliver_now
+              OfferListMailer.offer_list(s, offers).deliver_now
             end
          end
 end
