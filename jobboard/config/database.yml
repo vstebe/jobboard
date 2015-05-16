@@ -84,4 +84,4 @@ test:
 
 production:
   <<: *default
-    url: <%= ENV['SCALINGO_POSTGRESQL_URL'] %>
+  url: <%= ENV['SCALINGO_POSTGRESQL_URL'] %>
