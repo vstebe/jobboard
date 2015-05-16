@@ -12,4 +12,11 @@ class User < ActiveRecord::Base
          belongs_to :company
          has_many :offers
          has_many :applications
+
+         def self.send_offer_list
+            students = User.where(role: 'student')
+            students.each do |s|
+              OfferListMailer.offer_list(s).deliver_now
+            end
+         end
 end
