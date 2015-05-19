@@ -3,15 +3,18 @@
     %h2= @offer.title
     %h3
       De
-      %a{:href => "/companies/#{@offer.company.id}"} 
+      %a{:href => "/companies/#{@offer.company.id}"}
         = @offer.company.name
-      - 
+      -
       = @offer.created_at.strftime("%d/%m/%Y")
     %p= @offer.description
     %strong= "A partir du "+@offer.start_date.strftime("%d/%m/%Y")+" pour une durée de #{@offer.duration} semaines"
-    .right-button-container
-      %a{:href => "mailto:#{@offer.contact}?subject=#{@offer.title}"}
-        %button.btn.btn-primary.btn-lg Postuler
+    - if can? :apply, Offer
+      .right-button-container
+        %a{:href => "mailto:#{@offer.contact}?subject=#{@offer.title}"}
+          %button.btn.btn-primary.btn-lg Postuler
+    - if can? :close, Offer
+      = button_to "Fermer cette annonce", offer_path(:id => @offer.id), :method => :delete, :class => "btn btn-default"
+
 %a{:href => "/"}
   %button.btn.btn-default Retour
-  

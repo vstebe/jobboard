@@ -84,6 +84,4 @@ test:
 
 production:
   <<: *default
-  database: jobboard_production
-  username: jobboard
-  password: <%= ENV['JOBBOARD_DATABASE_PASSWORD'] %>
+  url: <%= ENV['SCALINGO_POSTGRESQL_URL'] %>

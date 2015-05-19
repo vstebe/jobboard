@@ -1,6 +1,4 @@
-%p#notice= notice
 %h1 Utilisateurs
-= debug @d
 = form_tag '/users/admin_edit' do
   %table.table.table-striped
     %thead
@@ -23,7 +21,7 @@
           %td= select_tag "role[#{user.id}]", options_for_select({ "Elève" => "student", "Représentant" => "representative", "Admin" => "admin", "Non Validé" => "not_validated" }, user.role), {:class => 'form-control'}
           %td= check_box_tag "delete[#{user.id}]"
         = hidden_field_tag 'user_ids[]', user.id
-  = submit_tag
+  = submit_tag "Envoyer", {:class => 'btn btn-default'}
 
 
 %br/

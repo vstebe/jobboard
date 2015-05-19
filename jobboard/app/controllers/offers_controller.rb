@@ -4,13 +4,14 @@ class OffersController < ApplicationController
   # GET /offers
   # GET /offers.json
   def index
-    @offers = Offer.all
+    @offers = Offer.where(published: true)
+    @offers_not_published = Offer.where(published: false)
   end
-  
+
   def filter
     @filter_company_id = params[:filter_company_id]
     @filter_target_id = params[:filter_target_id]
-    conditions = {}
+    conditions = {published: true}
     if @filter_company_id.present?
         conditions[:company_id] = @filter_company_id
     end
@@ -28,10 +29,18 @@ class OffersController < ApplicationController
   def show
   end
 
+
+  def close
+
+
+    @offer.active = false;
+    @offer.save()
+  end
+
   # GET /offers/new
   def new
     authorize! :create, Offer
-      
+
     @offer = Offer.new
     @companies = Company.all
   end
@@ -45,13 +54,19 @@ class OffersController < ApplicationController
   # POST /offers.json
   def create
     authorize! :create, Offer
-      
+
     offer_params[:user_id] = current_user.id
     @offer = Offer.new(offer_params)
 
+    notice = "L'offre a été créée."
+    if !(can? :publish, Offer)
+      @offer.published = false
+      notice = "L'offre a été créée et à été soumise à validation."
+    end
+
     respond_to do |format|
       if @offer.save
-        format.html { redirect_to @offer, notice: 'Offer was successfully created.' }
+        format.html { redirect_to @offer, notice: notice }
         format.json { render :show, status: :created, location: @offer }
       else
         format.html { render :new }
@@ -59,7 +74,7 @@ class OffersController < ApplicationController
       end
     end
   end
-  
+
 
 
   # PATCH/PUT /offers/1
@@ -79,6 +94,7 @@ class OffersController < ApplicationController
   # DELETE /offers/1
   # DELETE /offers/1.json
   def destroy
+    authorize! :destroy, Offer
     @offer.destroy
     respond_to do |format|
       format.html { redirect_to offers_url, notice: 'Offer was successfully destroyed.' }
