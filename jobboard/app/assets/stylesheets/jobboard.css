@@ -19,10 +19,9 @@ btn {
   margin-top:10px;
 }
 
-h1
+h1, h2
 {
    color: #EEEEEE;
-   /*text-shadow: 2px 2px 0.6px #AAAAAA;*/
 }
 
 iframe {
@@ -44,7 +43,7 @@ body
 }
 
 a.list-group-item {
-   background-color: rgba(255, 255, 255, 0.7);
+   background-color: rgba(255, 255, 255, 0.85);
 }
 
 div.panel {
@@ -55,12 +54,7 @@ div.panel-heading {
    background-color: rgba(220, 220, 220, 0.8);
 }
 
-/*
-a.list-group-item h4.list-group-item-heading {
-   color: rgb(230,230,230);
+.login-panel
+{
+  padding: 15px;
 }
-
-a.list-group-item p.list-group-item-text {
-   color: rgb(200,200,200);
-}
-*/
