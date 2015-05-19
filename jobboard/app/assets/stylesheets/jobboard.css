@@ -19,6 +19,12 @@ btn {
   margin-top:10px;
 }
 
+h1
+{
+   color: #EEEEEE;
+   /*text-shadow: 2px 2px 0.6px #AAAAAA;*/
+}
+
 iframe {
   width:100%;
   min-height:300px;
@@ -31,3 +37,30 @@ td {
 tr.not-validated {
   background-color: #8F75A6;
 }
+
+body
+{
+  background-image: url('/assets/background.jpg');
+}
+
+a.list-group-item {
+   background-color: rgba(255, 255, 255, 0.7);
+}
+
+div.panel {
+   background-color: rgba(255, 255, 255, 0.8);
+}
+
+div.panel-heading {
+   background-color: rgba(220, 220, 220, 0.8);
+}
+
+/*
+a.list-group-item h4.list-group-item-heading {
+   color: rgb(230,230,230);
+}
+
+a.list-group-item p.list-group-item-text {
+   color: rgb(200,200,200);
+}
+*/
