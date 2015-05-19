@@ -5,10 +5,10 @@
     %label.col-sm-2.control-label Type
     .col-sm-10
       %label
-        %input{type: 'radio', name: 'user_type', id: 'radioStudent', checked: true}
+        %input{type: 'radio', name: 'user[role]', id: 'radioStudent', checked: true, value: 'student'}
         Elève ingénieur ENSIIE
       %label
-        %input{type: 'radio', name: 'user_type', id: 'radioCompany'}
+        %input{type: 'radio', name: 'user[role]', id: 'radioCompany', value: 'representative'}
         Représentant entreprise
   .form-group
     %label.col-sm-2.control-label{:for => "email"} Email
@@ -39,8 +39,6 @@
     .col-sm-10
       .input-group
         = f.collection_select :company_id, Company.all, :id, :name, {}, {:class => "form-control"}
-        %span.input-group-btn
-          %a.btn.btn-default{:href => '/companies/new'} +
   = f.submit "Envoyer", :class => "btn btn-default"
 
 = render "devise/shared/links"
