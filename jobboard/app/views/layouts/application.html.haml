@@ -9,6 +9,7 @@
     / Le HTML5 shim, for IE6-8 support of HTML elements
     /[if lt IE 9]
       = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
+    %script{:src => "http://code.jquery.com/jquery-2.1.4.min.js"}
     = stylesheet_link_tag "application", :media => "all"
     = stylesheet_link_tag "jobboard", :media => "all"
     = favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144'
@@ -19,6 +20,7 @@
     = javascript_include_tag "application"
     %script{:src => "https://maps.googleapis.com/maps/api/js?v=3.exp"}
     = javascript_include_tag "jobboard"
+
 
 
   %body
@@ -34,7 +36,7 @@
             - if user_signed_in?
               %li
                 %a="Bienvenue "+current_user.first_name+" "+current_user.surname
-                
+
               %li= link_to "Se déconnecter", destroy_user_session_path, :method => :delete
             - else
               %li= link_to "Connexion", "/users/sign_in"
