@@ -16,10 +16,21 @@
 - @offers.each do |offer|
   %a.list-group-item{:href => "/offers/#{offer.id}"}
     %h4.list-group-item-heading= offer.title
-    %p.list-group-item-text= " de " + offer.company.name + " - à partir du " + offer.start_date.strftime("%d/%m/%Y") 
+    %p.list-group-item-text= " de " + offer.company.name + " - à partir du " + offer.start_date.strftime("%d/%m/%Y")
 - if @offers.count == 0
   %p Aucune offre ne correspond à votre recherche
-  
+
+- if can? :publish, Offer
+  %h3 Offres en attente de validation
+  .list-group
+  - @offers_not_published.each do |offer|
+    %a.list-group-item{:href => "/offers/#{offer.id}/edit"}
+      %h4.list-group-item-heading= offer.title
+      %p.list-group-item-text= " de " + offer.company.name + " - à partir du " + offer.start_date.strftime("%d/%m/%Y")
+  - if @offers_not_published.count == 0
+    %p Aucune offre n'est en attente de validation
+
+
 - if can? :create, Offer
   .right-button-container
     %a{:href => "/offers/new"}
