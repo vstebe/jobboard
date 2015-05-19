@@ -1,12 +1,23 @@
 $(function() {
+
+    updateGroup = function() {
+      if ($('#radioStudent').is(':checked')) {
+        $('#promoGroup').show();
+        $('#companyGroup').hide();
+      } else {
+        $('#promoGroup').hide();
+        $('#companyGroup').show();
+      }
+    };
+
     $('#radioStudent').click(function() {
-      $('#promoGroup').show();
-      $('#companyGroup').hide();
+      updateGroup();
     });
 
     $('#radioCompany').click(function() {
-      $('#promoGroup').hide();
-      $('#companyGroup').show();
+      updateGroup();
     });
-    $('#companyGroup').hide();
+
+    updateGroup();
+
 });
