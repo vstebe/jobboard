@@ -33,6 +33,9 @@ class Ability
       can [:create, :apply], Offer
     elsif user.role == "admin"
       can :manage, :all
+    elsif user.role == "representative"
+      can :edit, Offer, :user_id => user.id
+      can [:create], Offer
     end
   end
 

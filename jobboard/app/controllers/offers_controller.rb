@@ -64,6 +64,8 @@ class OffersController < ApplicationController
       notice = "L'offre a été créée et à été soumise à validation."
     end
 
+    @offer.user_id = current_user.id
+
     respond_to do |format|
       if @offer.save
         format.html { redirect_to @offer, notice: notice }
