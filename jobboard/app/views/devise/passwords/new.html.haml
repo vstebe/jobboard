@@ -1,9 +1,14 @@
 %h2= t('.forgot_your_password', :default => 'Forgot your password?')
-= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f|
+= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post, :class => "form-horizontal"}) do |f|
   = devise_error_messages!
-  %div
-    = f.label :email
-    %br/
-    = f.email_field :email
-  %div= f.submit t('.send_me_reset_password_instructions', :default => "Send me reset password instructions")
-= render "devise/shared/links"
+  .panel.login-panel
+    .panel-body
+      .form-group
+        %label.col-sm-2.control-label{:for => "email"} Email
+        .col-sm-10
+          = f.text_field :email, :class => "form-control"
+      .form-group.bouton-envoyer
+        .col-sm-2
+        .col-sm-10
+          %div= f.submit t('Réinitialiser', :default => "Réinitialiser"), :class => "btn btn-default"
+          = render "devise/shared/links"
