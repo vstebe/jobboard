@@ -1,44 +1,49 @@
 %h2= t('.sign_up', :default => "Sign up")
 = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => "form-horizontal"}) do |f|
   = devise_error_messages!
-  .form-group
-    %label.col-sm-2.control-label Type
-    .col-sm-10
-      %label
-        %input{type: 'radio', name: 'user[role]', id: 'radioStudent', checked: true, value: 'student'}
-        Elève ingénieur ENSIIE
-      %label
-        %input{type: 'radio', name: 'user[role]', id: 'radioCompany', value: 'representative'}
-        Représentant entreprise
-  .form-group
-    %label.col-sm-2.control-label{:for => "email"} Email
-    .col-sm-10
-      = f.text_field :email, :class => "form-control"
-  .form-group
-    %label.col-sm-2.control-label{:for => "password"} Mot de passe
-    .col-sm-10
-      = f.password_field :password, :class => "form-control"
-  .form-group
-    %label.col-sm-2.control-label{:for => "password_confirmation"} Confirmation du mot de passe
-    .col-sm-10
-      = f.password_field :password_confirmation, :class => "form-control"
-  .form-group
-    %label.col-sm-2.control-label{:for => "surname"} Nom
-    .col-sm-10
-      = f.text_field :surname, :class => "form-control"
-  .form-group
-    %label.col-sm-2.control-label{:for => "first_name"} Prénom
-    .col-sm-10
-      = f.text_field :first_name, :class => "form-control"
-  .form-group{id: 'promoGroup'}
-    %label.col-sm-2.control-label{:for => "promo"} Promotion
-    .col-sm-10
-      = f.text_field :promo, :class => "form-control"
-  .form-group{id: 'companyGroup'}
-    %label.col-sm-2.control-label{:for => "company"} Entreprise
-    .col-sm-10
-      .input-group
-        = f.collection_select :company_id, Company.all, :id, :name, {}, {:class => "form-control"}
-  = f.submit "Envoyer", :class => "btn btn-default"
-
-= render "devise/shared/links"
+  .panel.login-panel
+    .panel-body
+      .form-group
+        %label.col-sm-2.control-label Type
+        .col-sm-10
+          %label
+            %input{type: 'radio', name: 'user[role]', id: 'radioStudent', checked: true, value: 'student'}
+            Elève ingénieur ENSIIE
+          %label
+            %input{type: 'radio', name: 'user[role]', id: 'radioCompany', value: 'representative'}
+            Représentant entreprise
+      .form-group
+        %label.col-sm-2.control-label{:for => "email"} Email
+        .col-sm-10
+          = f.text_field :email, :class => "form-control"
+      .form-group
+        %label.col-sm-2.control-label{:for => "password"} Mot de passe
+        .col-sm-10
+          = f.password_field :password, :class => "form-control"
+      .form-group
+        %label.col-sm-2.control-label{:for => "password_confirmation"} Confirmation du mot de passe
+        .col-sm-10
+          = f.password_field :password_confirmation, :class => "form-control"
+      .form-group
+        %label.col-sm-2.control-label{:for => "surname"} Nom
+        .col-sm-10
+          = f.text_field :surname, :class => "form-control"
+      .form-group
+        %label.col-sm-2.control-label{:for => "first_name"} Prénom
+        .col-sm-10
+          = f.text_field :first_name, :class => "form-control"
+      .form-group{id: 'promoGroup'}
+        %label.col-sm-2.control-label{:for => "promo"} Promotion
+        .col-sm-10
+          = f.text_field :promo, :class => "form-control"
+      .form-group{id: 'companyGroup'}
+        %label.col-sm-2.control-label{:for => "company"} Entreprise
+        .col-sm-10
+          .input-group
+            = f.collection_select :company_id, Company.all, :id, :name, {}, {:class => "form-control"}
+      .form-group
+        .col-sm-2
+        .col-sm-10
+          = f.submit "Envoyer", :class => "btn btn-default"
+          %br
+          = render "devise/shared/links"

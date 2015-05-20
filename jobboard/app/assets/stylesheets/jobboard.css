@@ -21,7 +21,7 @@ btn {
 
 h1, h2
 {
-   color: #EEEEEE;
+   color: #FFFFFF;
 }
 
 iframe {
@@ -57,4 +57,9 @@ div.panel-heading {
 .login-panel
 {
   padding: 15px;
+}
+
+.bouton-envoyer
+{
+  margin-bottom : 0px;
 }
