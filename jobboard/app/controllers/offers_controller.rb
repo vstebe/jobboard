@@ -11,6 +11,7 @@ class OffersController < ApplicationController
   def filter
     @filter_company_id = params[:filter_company_id]
     @filter_target_id = params[:filter_target_id]
+    @offers_not_published = Offer.where(published: false)
     conditions = {published: true}
     if @filter_company_id.present?
         conditions[:company_id] = @filter_company_id
