@@ -44,13 +44,13 @@ Offer.create(company_id: 1, user_id: 2, title: 'Offre Crédit galactique - voyag
 target_id: target1.id, description:'Gérez les placements de nos clients sur des planètes étrangères à notre système. Curieux et motivé, vous serez amenez à gérez un grand nombre de clients à travers la galaxie.
 Permis X-wing requis, Mention hyper-espace appréciée',
 duration: '12', creation_date: DateTime.new(2009,9,14,8), start_date: DateTime.new(2009,9,14,8),
-expiration_date: DateTime.new(2009,10,14,8), contact: 'richard.delagrandiere@e-i.fr', active: true)
+expiration_date: DateTime.new(2009,10,14,8), contact: 'richard.delagrandiere@e-i.fr', active: true, published: true)
 
 Offer.create(company_id: 1, user_id: 2, title: 'Offre Crédit galactique - voyage galactée',
 target_id: target2.id, description:'Gérez les placements de nos clients sur des planètes étrangères à notre système. Curieux et motivé, vous serez amenez à gérez un grand nombre de clients à travers la galaxie.
 Permis X-wing requis, Mention hyper-espace appréciée',
 duration: '12', creation_date: DateTime.new(2009,9,14,8), start_date: DateTime.new(2009,9,14,8),
-expiration_date: DateTime.new(2009,9,14,8), contact: 'richard.delagrandiere@e-i.fr', active: true)
+expiration_date: DateTime.new(2009,9,14,8), contact: 'richard.delagrandiere@e-i.fr', active: true, published: false)
 
 Application.create(user_id: 2, offer_id: 1,
 time: DateTime.new(2009,9,14,8))

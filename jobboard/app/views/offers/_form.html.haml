@@ -7,44 +7,49 @@
       %ul
         - @offer.errors.full_messages.each do |message|
           %li= message
-  .form-group
-    %label.col-sm-2.control-label{:for => "company"} Entreprise
-    .col-sm-10
-      .input-group
-        = f.collection_select :company_id, Company.all, :id, :name, {}, {:class => "form-control"}
-        %span.input-group-btn
-          %a.btn.btn-default{:href => '/companies/new'} +
-  .form-group
-    %label.col-sm-2.control-label{:for => "offer_title"} Intitulé
-    .col-sm-10
-      = f.text_field :title, :class => "form-control"
-  .form-group
-    %label.col-sm-2.control-label{:for => "offer_target"} Etudiants ciblés
-    .col-sm-10
-      = f.collection_select :target_id, Target.all, :id, :label, {}, {:class => "form-control"}
-  .form-group
-    %label.col-sm-2.control-label{:for => "offer_description"} Description
-    .col-sm-10
-      = f.text_area :description, :class => "form-control"
-  .form-group
-    %label.col-sm-2.control-label{:for => "offer_duration"} Durée en semaines
-    .col-sm-10
-      = f.number_field :duration, :class => "form-control"
-  .form-group
-    %label.col-sm-2.control-label{:for => "offer_start_date"} Du
-    .col-sm-10
-      = f.date_field :start_date, :class => "form-control"
-  .form-group
-    %label.col-sm-2.control-label{:for => "offer_expiration_date"} Au
-    .col-sm-10
-      = f.date_field :expiration_date, :class => "form-control"
-  .form-group
-    %label.col-sm-2.control-label{:for => "offer_contact"} Adresse e-mail de contact
-    .col-sm-10
-      = f.email_field :contact, :class => "form-control"
-  - if can? :publish, Offer
-    .form-group
-      %label.col-sm-2.control-label{:for => "offer_published"} Publiée
-      .col-sm-10
-        = f.check_box :published, :class => "form-control"
-  = f.submit "Envoyer", :class => "btn btn-default" 
+  .panel.login-panel
+    .panel-body
+      .form-group
+        %label.col-sm-2.control-label{:for => "company"} Entreprise
+        .col-sm-10
+          .input-group
+            = f.collection_select :company_id, Company.all, :id, :name, {}, {:class => "form-control"}
+            %span.input-group-btn
+              %a.btn.btn-default{:href => '/companies/new'} +
+      .form-group
+        %label.col-sm-2.control-label{:for => "offer_title"} Intitulé
+        .col-sm-10
+          = f.text_field :title, :class => "form-control"
+      .form-group
+        %label.col-sm-2.control-label{:for => "offer_target"} Etudiants ciblés
+        .col-sm-10
+          = f.collection_select :target_id, Target.all, :id, :label, {}, {:class => "form-control"}
+      .form-group
+        %label.col-sm-2.control-label{:for => "offer_description"} Description
+        .col-sm-10
+          = f.text_area :description, :class => "form-control"
+      .form-group
+        %label.col-sm-2.control-label{:for => "offer_duration"} Durée en semaines
+        .col-sm-10
+          = f.number_field :duration, :class => "form-control"
+      .form-group
+        %label.col-sm-2.control-label{:for => "offer_start_date"} Du
+        .col-sm-10
+          = f.date_field :start_date, :class => "form-control"
+      .form-group
+        %label.col-sm-2.control-label{:for => "offer_expiration_date"} Au
+        .col-sm-10
+          = f.date_field :expiration_date, :class => "form-control"
+      .form-group
+        %label.col-sm-2.control-label{:for => "offer_contact"} Adresse e-mail de contact
+        .col-sm-10
+          = f.email_field :contact, :class => "form-control"
+      - if can? :publish, Offer
+        .form-group
+          %label.col-sm-2.control-label{:for => "offer_published"} Publiée
+          .col-sm-10
+            = f.check_box :published, :class => "form-control"
+        .form_group
+          .col-sm-2
+          .col-sm-10
+            = f.submit "Envoyer", :class => "btn btn-default"

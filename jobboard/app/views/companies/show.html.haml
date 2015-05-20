@@ -1,10 +1,11 @@
 %h1= @company.name
-%p= @company.description
-%h2 Coordonnées
-%ul
-  %li= "Téléphone : " + @company.phone
-  %li= "Adresse : " + @company.address
-%div{:id => 'map-canvas'}
+.panel.login-panel
+  .panel-body
+    %p= @company.description
+    %h2 Coordonnées
+    %ul
+      %li= "Téléphone : " + @company.phone
+      %li= "Adresse : " + @company.address
+    %div{:id => 'map-canvas'}
 
-%iframe{:src => "https://www.google.com/maps/embed/v1/place?q=#{@company.address}%2C%20France&key=AIzaSyBCAYpl39PffuO98h834z-hVfMIqGQ7hUc", :style => 'border:0'}
-
+    %iframe{:src => "https://www.google.com/maps/embed/v1/place?q=#{@company.address}%2C%20France&key=AIzaSyBCAYpl39PffuO98h834z-hVfMIqGQ7hUc", :style => 'border:0'}

@@ -19,11 +19,14 @@ btn {
   margin-top:10px;
 }
 
-h1, h2
+h1, h2, h3, h5
 {
    color: #FFFFFF;
 }
 
+div > h2 {
+  color: #53555C;
+}
 iframe {
   width:100%;
   min-height:300px;
@@ -43,7 +46,12 @@ body
 }
 
 a.list-group-item {
-   background-color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+div.list-group-item{
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 4px;
 }
 
 div.panel {
@@ -62,4 +70,14 @@ div.panel-heading {
 .bouton-envoyer
 {
   margin-bottom : 0px;
+}
+
+.display-offer
+{
+  color :#666666;
+}
+
+.no-offer
+{
+  margin-bottom: 0px;
 }

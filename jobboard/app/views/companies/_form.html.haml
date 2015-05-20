@@ -7,24 +7,29 @@
       %ul
         - @company.errors.full_messages.each do |message|
           %li= message
-  .form-group
-    %label.col-sm-2.control-label{:for => "company_name"} Nom de l'entreprise
-    .col-sm-10
-      = f.text_field :name, :class => "form-control"
-  .form-group
-    %label.col-sm-2.control-label{:for => "company_description"} Description
-    .col-sm-10
-      = f.text_area :description, :class => "form-control"
-  .form-group
-    %label.col-sm-2.control-label{:for => "company_phone"} Téléphone
-    .col-sm-10
-      = f.text_field :phone, :class => "form-control"
-  .form-group
-    %label.col-sm-2.control-label{:for => "company_mail"} Adresse email
-    .col-sm-10
-      = f.text_field :mail, :class => "form-control"
-  .form-group
-    %label.col-sm-2.control-label{:for => "company_address"} Adresse
-    .col-sm-10
-      = f.text_area :address, :class => "form-control"
-  = f.submit "Envoyer", :class => "btn btn-default" 
+  .panel.login-panel
+    .panel-body
+      .form-group
+        %label.col-sm-2.control-label{:for => "company_name"} Nom de l'entreprise
+        .col-sm-10
+          = f.text_field :name, :class => "form-control"
+      .form-group
+        %label.col-sm-2.control-label{:for => "company_description"} Description
+        .col-sm-10
+          = f.text_area :description, :class => "form-control"
+      .form-group
+        %label.col-sm-2.control-label{:for => "company_phone"} Téléphone
+        .col-sm-10
+          = f.text_field :phone, :class => "form-control"
+      .form-group
+        %label.col-sm-2.control-label{:for => "company_mail"} Adresse email
+        .col-sm-10
+          = f.text_field :mail, :class => "form-control"
+      .form-group
+        %label.col-sm-2.control-label{:for => "company_address"} Adresse
+        .col-sm-10
+          = f.text_area :address, :class => "form-control"
+      .form_group
+        .col-sm-2
+        .col-sm-10
+          = f.submit "Envoyer", :class => "btn btn-default"
