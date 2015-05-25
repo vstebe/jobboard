@@ -11,7 +11,7 @@
         .col-sm-10
           = f.password_field :password, :class => "form-control", :autocomplete => "off"
       - if devise_mapping.rememberable?
-        .form-group
+        .form-group.lastBox
           .col-sm-2
           .col-sm-10
             = f.check_box :remember_me

@@ -24,9 +24,9 @@ h1, h2, h3, h5
    color: #FFFFFF;
 }
 
-div > h2 {
+/*div > h2 {
   color: #53555C;
-}
+}*/
 iframe {
   width:100%;
   min-height:300px;
@@ -67,17 +67,12 @@ div.panel-heading {
   padding: 15px;
 }
 
-.bouton-envoyer
-{
-  margin-bottom : 0px;
-}
-
 .display-offer
 {
   color :#666666;
 }
 
-.no-offer
+.lastBox
 {
   margin-bottom: 0px;
 }

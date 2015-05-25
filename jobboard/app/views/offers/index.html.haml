@@ -19,7 +19,7 @@
     %p.list-group-item-text= " de " + offer.company.name + " - à partir du " + offer.start_date.strftime("%d/%m/%Y")
 - if @offers.count == 0
   .list-group-item
-    %h4.list-group-item-heading.no-offer Aucune offre ne correspond à votre recherche
+    %h4.list-group-item-heading.lastBox Aucune offre ne correspond à votre recherche
     %p.list-group-item-text
 
 - if can? :publish, Offer
@@ -31,7 +31,7 @@
       %p.list-group-item-text= " de " + offer.company.name + " - à partir du " + offer.start_date.strftime("%d/%m/%Y")
   - if @offers_not_published.count == 0
     .list-group-item
-      %h4.list-group-item-heading.no-offer Aucune offre n'est en attente de validation
+      %h4.list-group-item-heading.lastBox Aucune offre n'est en attente de validation
       %p.list-group-item-text
 
 
