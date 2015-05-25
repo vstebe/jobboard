@@ -19,11 +19,14 @@ class CompaniesController < ApplicationController
 
   # GET /companies/1/edit
   def edit
+    authorize! :edit, @company
   end
 
   # POST /companies
   # POST /companies.json
   def create
+    authorize! :create, @company
+
     @company = Company.new(company_params)
 
     respond_to do |format|
