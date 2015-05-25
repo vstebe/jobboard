@@ -13,6 +13,18 @@ class User < ActiveRecord::Base
          has_many :offers
          has_many :applications
 
+         def active_for_authentication?
+           super && role != "not_validated"
+         end
+
+         def inactive_message
+            if role == "not_validated" 
+              :not_approved
+            else
+              super # Use whatever other message
+            end
+          end
+
          def self.send_offer_list
             students = User.where(role: 'student')
             offers = Offer.all

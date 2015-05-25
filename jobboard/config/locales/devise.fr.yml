@@ -17,6 +17,7 @@ fr:
       timeout: "Votre session est expirée. Veuillez vous reconnecter pour continuer."
       unauthenticated: "Vous devez vous connecter ou vous inscrire pour continuer."
       unconfirmed: "Vous devez confirmer votre compte pour continuer."
+      not_approved: "Votre compte n'a pas encore été validé par un administrateur."
     mailer:
       confirmation_instructions:
         subject: "Instructions de confirmation"

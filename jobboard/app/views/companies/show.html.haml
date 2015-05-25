@@ -9,3 +9,6 @@
     %div{:id => 'map-canvas'}
 
     %iframe{:src => "https://www.google.com/maps/embed/v1/place?q=#{@company.address}%2C%20France&key=AIzaSyBCAYpl39PffuO98h834z-hVfMIqGQ7hUc", :style => 'border:0'}
+
+    - if can? :edit, @company
+      = button_to "Editer cette entreprise", edit_company_path(:id => @company.id), :method => :get, :class => "btn btn-default"

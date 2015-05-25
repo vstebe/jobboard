@@ -35,6 +35,7 @@ class Ability
       can :manage, :all
     elsif user.role == "representative"
       can :edit, Offer, :user_id => user.id
+      can :edit, Company, :id => user.company.id
       can [:create], Offer
     end
   end

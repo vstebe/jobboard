@@ -40,3 +40,7 @@
   .right-button-container
     %a{:href => "/offers/new"}
       %button.btn.btn-primary.btn-lg Proposer une offre
+- if can? :create, Company
+  .right-button-container
+    %a{:href => "/companies/new"}
+      %button.btn.btn-primary.btn-lg Ajouter une entreprise

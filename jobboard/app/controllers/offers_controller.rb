@@ -48,6 +48,8 @@ class OffersController < ApplicationController
 
   # GET /offers/1/edit
   def edit
+    authorize! :edit, @offer
+
     @companies = Company.all
   end
 
