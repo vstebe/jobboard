@@ -7,25 +7,22 @@
       %ul
         - @user.errors.full_messages.each do |message|
           %li= message
-  .field
-    = f.label :type
-    %br/
-    = f.text_field :user_type
-  .field
-    = f.label :surname
-    %br/
-    = f.text_field :surname
-  .field
-    = f.label :first_name
-    %br/
-    = f.text_field :first_name
-  .field
-    = f.label :mail
-    %br/
-    = f.text_field :mail
-  .field
-    = f.label :promo
-    %br/
-    = f.number_field :promo
+  .form-group
+    %label.col-sm-2.control-label{:for => "type"} Type ?
+    .col-sm-10
+      = f.text_field :user_type, :class => "form-control"
+  .form-group
+    %label.col-sm-2.control-label{:for => "firs_name"} Prénom
+    .col-sm-10
+      = f.text_field :first_name, :class => "form-control"
+  .form-group
+    %label.col-sm-2.control-label{:for => "surname"} Nom
+    .col-sm-10
+      = f.text_field :surname, :class => "form-control"
+  .form-group
+    %label.col-sm-2.control-label{:for => "mail"} Email
+    .col-sm-10
+      = f.text_field :mail, :class => "form-control"
+
   .actions
     = f.submit

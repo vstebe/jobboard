@@ -35,7 +35,9 @@
           %ul.nav.navbar-nav
             - if user_signed_in?
               %li
-                %a="Bienvenue "+current_user.first_name+" "+current_user.surname
+                %a{:href => "/users/edit"}
+                  Bienvenue
+                  %b=current_user.first_name+" "+current_user.surname
 
               %li= link_to "Se déconnecter", destroy_user_session_path, :method => :delete
             - else
