@@ -14,11 +14,11 @@
 
 .list-group
 - @offers.each do |offer|
-  %a.list-group-item{:href => "/offers/#{offer.id}"}
+  %a.list-group-item.smooth{:href => "/offers/#{offer.id}"}
     %h4.list-group-item-heading= offer.title
     %p.list-group-item-text= " de " + offer.company.name + " - à partir du " + offer.start_date.strftime("%d/%m/%Y")
 - if @offers.count == 0
-  .list-group-item
+  .list-group-item.smooth
     %h4.list-group-item-heading.lastBox Aucune offre ne correspond à votre recherche
     %p.list-group-item-text
 
@@ -26,21 +26,25 @@
   %h1 Offres en attente de validation
   .list-group
   - @offers_not_published.each do |offer|
-    %a.list-group-item{:href => "/offers/#{offer.id}/edit"}
+    %a.list-group-item.smooth{:href => "/offers/#{offer.id}/edit"}
       %h4.list-group-item-heading= offer.title
       %p.list-group-item-text= " de " + offer.company.name + " - à partir du " + offer.start_date.strftime("%d/%m/%Y")
   - if @offers_not_published.count == 0
-    .list-group-item
+    .list-group-item.smooth
       %h4.list-group-item-heading.lastBox Aucune offre n'est en attente de validation
       %p.list-group-item-text
 
 
+%br
 
-- if can? :create, Offer
   .right-button-container
-    %a{:href => "/offers/new"}
-      %button.btn.btn-primary.btn-lg Proposer une offre
-- if can? :create, Company
-  .right-button-container
-    %a{:href => "/companies/new"}
-      %button.btn.btn-primary.btn-lg Ajouter une entreprise
+    - if can? :show, Company
+      %a{:href => "/companies"}
+        %button.btn.btn-primary.btn-lg Liste des entreprises
+    - if can? :create, Offer
+      %a{:href => "/users"}
+        %button.btn.btn-primary.btn-lg Liste des utilisateurs
+    - if can? :create, Offer
+      %a{:href => "/offers/new"}
+        %button.btn.btn-primary.btn-lg Proposer une offre
+%br

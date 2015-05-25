@@ -82,3 +82,8 @@ div.panel-heading {
 {
   color: #FFFFFF;
 }
+
+.smooth
+{
+  border-radius: 4px;
+}
