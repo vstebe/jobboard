@@ -10,7 +10,7 @@
     %p= @offer.description
     %strong= "A partir du "+@offer.start_date.strftime("%d/%m/%Y")+" pour une durée de #{@offer.duration} semaines"
     - if can? :apply, Offer
-      .right-button-container
+      .right-button-container.lastBox
         %a{:href => "mailto:#{@offer.contact}?subject=#{@offer.title}"}
           %button.btn.btn-primary.btn-lg Postuler
     %br
