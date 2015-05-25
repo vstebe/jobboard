@@ -41,7 +41,7 @@
         .col-sm-10
           .input-group
             = f.collection_select :company_id, Company.all, :id, :name, {}, {:class => "form-control"}
-      .form-group
+      .form-group.lastBox
         .col-sm-2
         .col-sm-10
           = f.submit "Envoyer", :class => "btn btn-default"
