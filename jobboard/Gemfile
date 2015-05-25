@@ -17,7 +17,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'devise'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
-
+gem 'clockwork'
 gem 'cancan'
 
 gem 'whenever'
