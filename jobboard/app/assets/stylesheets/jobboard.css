@@ -24,9 +24,10 @@ h1, h2, h3, h5
    color: #FFFFFF;
 }
 
-/*div > h2 {
+.companyTitle {
   color: #53555C;
-}*/
+}
+
 iframe {
   width:100%;
   min-height:300px;
@@ -75,4 +76,9 @@ div.panel-heading {
 .lastBox
 {
   margin-bottom: 0px;
+}
+
+.plus_button:link, .plus_button:visited, .plus_button:active, .plus_button:hover
+{
+  color: #FFFFFF;
 }

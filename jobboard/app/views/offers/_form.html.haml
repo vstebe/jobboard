@@ -15,7 +15,7 @@
           .input-group
             = f.collection_select :company_id, Company.all, :id, :name, {}, {:class => "form-control"}
             %span.input-group-btn
-              %a.btn.btn-default{:href => '/companies/new'} +
+              %a.btn.btn-default.plus_button{:href => '/companies/new'} +
       .form-group
         %label.col-sm-2.control-label{:for => "offer_title"} Intitulé
         .col-sm-10
@@ -49,7 +49,7 @@
           %label.col-sm-2.control-label{:for => "offer_published"} Publiée
           .col-sm-10
             = f.check_box :published, :class => "form-control"
-        .form_group
-          .col-sm-2
-          .col-sm-10
-            = f.submit "Envoyer", :class => "btn btn-default"
+      .form_group
+        .col-sm-2
+        .col-sm-10
+          = f.submit "Envoyer", :class => "btn btn-default"
