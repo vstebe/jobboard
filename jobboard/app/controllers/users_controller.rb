@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
+    authorize! :index, User
     @users = User.order('id')
   end
 
@@ -23,6 +24,7 @@ class UsersController < ApplicationController
 
   # GET /users/admin_edit
   def admin_edit
+    authorize! :edit, User
     ids = params['user_ids']
     role = params['role']
     delete = params['delete']

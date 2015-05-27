@@ -85,6 +85,3 @@ target_id: target2.id, description:'Vous me ressemblez ? Vous aimez les maths ? 
 pendant les partiels ! Rémunération en fonction du profil physique.',
 duration: '5', creation_date: DateTime.new(2013,4,4,8), start_date: DateTime.new(2009,9,14,8),
 expiration_date: DateTime.new(2015,5,28,5), contact: 'richard.delagrandiere@e-i.fr', active: true, published: false)
-
-Application.create(user_id: 2, offer_id: 1,
-time: DateTime.new(2009,9,14,8))
